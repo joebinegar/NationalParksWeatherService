@@ -1,0 +1,45 @@
+﻿@using Capstone.Web.Models
+@model List<Survey>
+
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        /*text-align: left;*/
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2
+    }
+</style>
+
+
+<body>
+    <div style="text-align:left;padding-left: 15px; font-size:2vw;"><h1>Favorite Parks</h1></div>
+    
+    <div class="flex-container" style="overflow-x:auto">
+        <table>
+            <tr style="text-align:center;padding-left: 15px; font-size:2vw;">
+                <th></th>
+                <th style="text-align:left">Park</th>
+                <th>Favorites</th>
+            </tr>
+            @{foreach (var item in Model)
+                {
+                    <tr>
+                        <td><div class="flex-item"><img style="border:1px solid #ddd;border-radius: 4px;padding: 5px;width: 150px;" src="~/Content/img/parks/@(item.ParkCode).jpg" /></div></td>
+                        
+                            <td style="text-align:left;padding-left: 15px; font-size:2vw;">
+                                <a href="~/Home/Detail?ParkCode=@(item.ParkCode)"><div class="flex-item">@item.ParkName</div></a></td>
+                            <td style="text-align:center;padding-left: 15px; font-size:2vw;"><div>@item.SurveyCount</div></td>
+</tr>
+
+                }
+            }
+        </table>
+    </div>
+</body>

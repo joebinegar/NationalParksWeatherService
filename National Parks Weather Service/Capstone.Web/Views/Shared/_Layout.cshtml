@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+
+<meta name="viewport" content="width=device-width" />
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="~/Content/Style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <title>National Park Geek</title>
+</head>
+
+<body>
+    <div class="header">
+        <img id="headerlogo" src="~/Content/img/header pics/logo.png" />
+
+        <div class="topnav">
+            <a href="~/Home/Index">Home</a>
+            <a href="~/Home/Survey">Survey</a>
+            <a href="~/Home/FavoriteParks">Favorite Parks</a>
+        </div>
+    </div>
+    <div class="container-fluid" style="padding:20px/*;padding-top:185px*/">
+        @RenderBody()
+    </div>
+
+</body>
+</html>

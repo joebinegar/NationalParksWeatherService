@@ -1,0 +1,174 @@
+﻿
+@using Capstone.Web.Models
+@model ParkDetail
+
+<div class="card-group" style="flex-direction:column">
+    
+
+        <div class="card">
+            <img class="card-img-top" src="~/Content/img/parks/@(Model.ParkCode).jpg" />
+            <div class="card-header">
+                <h1><b>@Model.Name</b></h1>
+            </div>
+            <div class="card-body">
+                <blockquote class="blockquote mb-0" style="margin-bottom: 10px">
+                    <p>@Model.InspirQuote</p>
+                    <footer class="blockquote-footer"><cite title="Source Title">@Model.InspirQSource</cite></footer>
+                </blockquote>
+                <p><b>Location: </b>Located in @Model.State </p>
+                <p><b>Year Founded: </b>@Model.YearFounded</p>
+                <p><b>Annual Visitor Count: </b>@string.Format("{0:n0}", Model.AnnualVisitorCount)</p>
+                <p><b>Climate: </b>@Model.Climate</p>
+                <p><b>Number of species of animals: </b>@string.Format("{0:n0}", @Model.NumAnimalSpecies)</p>
+                <p><b>Elevation: </b>@string.Format("{0:n0}", @Model.ElevationInFeet) feet</p>
+                <p><b>Miles of Trail: </b>More than @string.Format("{0:n0}", @Model.MilesOfTrail) miles of trail</p>
+                <p><b>Entry Fee: </b>@Model.EntryFee.ToString("c")</p>
+                <p><b>Description: </b>@Model.Description</p>
+            </div>
+        </div>
+
+        @*<div class="container-fluid">*@
+            <div class="card" style="border-left-color: rgba(0, 0, 0, 0.125);
+                                        border-left-style: solid;
+                                        border-left-width: 1px;">
+                <div class="card-header">
+                    <h1><b>5-Day Forecast</b></h1>
+                </div>
+                
+                    <div class="card-body">
+                        <div class="card-group">
+                            @{foreach (var item in Model.Forecast)
+                                {
+                                    if (item.ForecastValue == 1)
+                                    {
+                                        <div class="card col-sm-2">
+                                            <img class="card-img-top" src="~/Content/img/weather/@(item.Forecast).png" />
+                                            <div class="card-body">
+                                                <h5 class="card-title"style="text-align:center"><p id="demo1"></p></h5>
+                                                <p class="card-text">
+                                                    <div>@item.HighTemp @item.TempScale</div>
+                                                    <div>@item.LowTemp @item.TempScale</div>
+                                                    <div>@item.WeatherRecommendation</div>
+                                                    <div>@item.TempRecommendation</div>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    }
+
+                                    if (item.ForecastValue == 2)
+                                    {
+                                        <div class="card col-sm-2" @*style="width: 18rem;"*@>
+                                            <img class="card-img-top" src="~/Content/img/weather/@(item.Forecast).png" />
+                                            <div class="card-body">
+                                                <h5 class="card-title"style="text-align:center"><p id="demo2"></p></h5>
+                                                <p class="card-text">
+                                                    <div>@item.HighTemp @item.TempScale</div>
+                                                    <div>@item.LowTemp @item.TempScale</div>
+                                                    <div>@item.WeatherRecommendation</div>
+                                                    <div>@item.TempRecommendation</div>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    }
+
+                                    if (item.ForecastValue == 3)
+                                    {
+                                        <div class="card col-sm-2" @*style="width: 18rem;"*@>
+                                            <img class="card-img-top" src="~/Content/img/weather/@(item.Forecast).png" />
+                                            <div class="card-body">
+                                                <h5 class="card-title"style="text-align:center"><p id="demo3"></p></h5>
+                                                <p class="card-text">
+                                                    <div>@item.HighTemp @item.TempScale</div>
+                                                    <div>@item.LowTemp @item.TempScale</div>
+                                                    <div>@item.WeatherRecommendation</div>
+                                                    <div>@item.TempRecommendation</div>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    }
+
+                                    if (item.ForecastValue == 4)
+                                    {
+                                        <div class="card col-sm-2" @*style="width: 18rem;"*@>
+                                            <img class="card-img-top" src="~/Content/img/weather/@(item.Forecast).png" />
+                                            <div class="card-body">
+                                                <h5 class="card-title"style="text-align:center"><p id="demo4"></p></h5>
+                                                <p class="card-text">
+                                                    <div>@item.HighTemp @item.TempScale</div>
+                                                    <div>@item.LowTemp @item.TempScale</div>
+                                                    <div>@item.WeatherRecommendation</div>
+                                                    <div>@item.TempRecommendation</div>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    }
+
+                                    if (item.ForecastValue == 5)
+                                    {
+                                        <div class="card col-sm-2" @*style="width: 18rem;"*@>
+                                            <img class="card-img-top" src="~/Content/img/weather/@(item.Forecast).png" />
+                                            <div class="card-body">
+                                                <h5 class="card-title"style="text-align:center"><p id="demo5"></p></h5>
+                                                <p class="card-text">
+                                                    <div>@item.HighTemp @item.TempScale</div>
+                                                    <div>@item.LowTemp @item.TempScale</div>
+                                                    <div>@item.WeatherRecommendation</div>
+                                                    <div>@item.TempRecommendation</div>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    }
+
+                                }
+                                                }
+                                            </div>
+    
+</div>
+                </div>
+                
+            </div>
+        
+
+
+    
+
+    
+        <div>
+            <form method="get" action="@Url.Action("TempScaleChoice", "Home")">
+                <select name="scale" id="scale">
+                    <option value="0">Fahrenheit</option>
+                    <option value="1">Celsius</option>
+                </select>
+                @Html.HiddenFor(m => m.ParkCode)
+                <button>Convert</button>
+            </form>
+        </div>
+   
+<script>
+var d = new Date();
+var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+document.getElementById("demo1").innerHTML = days[d.getDay()];
+
+var d = new Date();
+var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    document.getElementById("demo2").innerHTML = days[d.getDay()+1];
+
+    var d = new Date();
+    var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    document.getElementById("demo3").innerHTML = days[d.getDay()+2];
+
+    var d = new Date();
+    var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    document.getElementById("demo4").innerHTML = days[d.getDay()+3];
+
+    var d = new Date();
+    var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    document.getElementById("demo5").innerHTML = days[d.getDay()+4];
+</script>
+
+
+
+
+        
+   
+   

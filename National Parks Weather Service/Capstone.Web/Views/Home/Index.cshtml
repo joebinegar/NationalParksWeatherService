@@ -1,0 +1,22 @@
+﻿
+@using Capstone.Web.Models
+@model List<Park>
+
+
+    @foreach (var item in Model)
+    {
+        <div class="flex-container">
+            <div class="flex-item">
+                <a href="~/Home/Detail?ParkCode=@(item.ParkCode)">
+                    <img class="parkImg" src="~/Content/img/parks/@(item.ParkCode).jpg" />
+                </a>
+            </div>
+    
+            <div class="flex-item">       
+                <a href="~/Home/Detail?ParkCode=@(item.ParkCode)">
+                    <h1 id="parkName" style="font-size:3vw;"><b>@item.Name</b></h1>
+                </a>
+                    <p id="parkDescription" style="font-size:1.5vw;">@item.Description</p>
+            </div>
+        </div>
+    }
